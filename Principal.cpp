@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Funciones.cpp" // Es ek archivo que contiene las funciones que se usan en el programa
+#include "Funciones.cpp" // Es el archivo que contiene las funciones que se usan en el programa
 
 using namespace std;
 
