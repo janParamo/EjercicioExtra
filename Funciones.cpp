@@ -19,92 +19,22 @@
 using namespace std;
 
 // Prototipos de las funciones
-void menu(); // Funcion que muestra el menu
-int registroLibro(); // Funcion principal
+int menu();              // Funcion que muestra el menu
+int registroLibro();     // Funcion principal
 void libroMayoroMenor(); // Esta funcion se encarga de verificar que el anio del libro sea mayor que 1900 y menor que 2025
 
-// La funcion principal en la que giran en torno las demas funciones
-int registroLibro()
-{
-
-    menu();
-    cin >> opcion;
-
-    switch (opcion)
-    {
-    case 1: // Agregar un libro
-
-        cout << "Ingrese el titulo del libro: " << endl;
-        cin >> nuevoLibro.titulo;
-        cout << "Ingrese el autor del libro: " << endl;
-        cin >> nuevoLibro.autor;
-        cout << "Ingrese el ISBN del libro: " << endl;
-        cin >> nuevoLibro.ISBN;
-        libroMayoroMenor();
-        arregloLibros[indice] = nuevoLibro;
-        indice++;
-
-        break;
-    case 2: // Mostrar todos los libros
-
-        for (int i = 0; i < indice; i++) 
-        {
-            cout << "El titulo del libro es: " << endl;
-            cin >> arregloLibros[i].titulo;
-            cout << "El autor es: " << endl;
-            cin >> arregloLibros[i].autor;
-            cout << "ISBN: " << endl;
-            cin >> arregloLibros[i].ISBN;
-            cout << "El anio de publicacion es: " << endl;
-            cin >> arregloLibros[i].anio;
-            cout << endl;
-        }
-
-        break;
-    case 3: // Mostrar los libros recientes(Menos de 5 anios)
-
-        for (int i = 0; i < indice; i++)
-        {
-            if (arregloLibros[i].anio > 2019)
-            {
-                cout << "El titulo del libro es: " << endl;
-                cin >> arregloLibros[i].titulo;
-                cout << "El autor es: " <<  endl;
-                cin >> arregloLibros[i].autor;
-                cout << "ISBN: " <<  endl;
-                cin >> arregloLibros[i].ISBN;
-                cout << "El anio de publicacion es: " <<  endl;
-                cin >> arregloLibros[i].anio;
-                cout << endl;
-            }
-        }
-
-        break;
-    case 4: // Salida
-
-        cout << "Bye :) " << endl;
-        break;
-
-    default:
-        cout << "La opcion no es valida.... " << endl;
-        break;
-    }
-    if (opcion != 4)
-    {
-        menu();
-    }
-    return 0;
-}
-
 // Funcion para mostrar el menu
-void menu()
+int menu()
 {
-    cout << "Ingrese una opcion: " << endl;
+    system("cls || clear");
+    cout << "Menu de opciones: " << endl;
     cout << "1. Agregar un nuevo libro al catalogo. " << endl;
     cout << "2. Mostrar todos los libros en el catalogo. " << endl;
-    cout << "3. Mostrar los libros publicados en los ultimos 5 años. " << endl;
+    cout << "3. Mostrar los libros publicados en los ultimos 5 anios. " << endl;
     cout << "4. Salir " << endl;
-    cout << endl;
+    cout << "Seleccione una opcion: " << endl;
+    cin >> opcion;
+    return opcion;
 }
 
 // Funcion para verificar que el anio del libro sea mayor que 1900 y menor que 2025
@@ -116,4 +46,76 @@ void libroMayoroMenor()
         cout << "El anio del libro tiene que ser mayor a 1900 y menor que 2025, porfavor ingresar un anio valido:  " << endl;
         cin >> nuevoLibro.anio;
     }
+    system("pause");
 }
+
+// La funcion principal en la que giran en torno las demas funciones
+int registroLibro()
+{
+    while (opcion != 4)
+    {
+        opcion = menu();
+        switch (opcion)
+        {
+        case 1: // Agregar un libro
+
+            cout << "Ingrese el titulo del libro: " << endl;
+            cin >> nuevoLibro.titulo;
+            cout << "Ingrese el autor del libro: " << endl;
+            cin >> nuevoLibro.autor;
+            cout << "Ingrese el ISBN del libro: " << endl;
+            cin >> nuevoLibro.ISBN;
+            libroMayoroMenor();
+            arregloLibros[indice] = nuevoLibro;
+            indice++;
+            system("pause");
+            break;
+        case 2: // Mostrar todos los libros
+
+            for (int i = 0; i < indice; i++)
+            {
+                cout << "El titulo del libro es: " << endl;
+                cin >> arregloLibros[i].titulo;
+                cout << "El autor es: " << endl;
+                cin >> arregloLibros[i].autor;
+                cout << "ISBN: " << endl;
+                cin >> arregloLibros[i].ISBN;
+                cout << "El anio de publicacion es: " << endl;
+                cin >> arregloLibros[i].anio;
+                cout << endl;
+            }
+
+            break;
+        case 3: // Mostrar los libros recientes(Menos de 5 anios)
+
+            for (int i = 0; i < indice; i++)
+            {
+                if (arregloLibros[i].anio > 2019)
+                {
+                    cout << "El titulo del libro es: " << endl;
+                    cin >> arregloLibros[i].titulo;
+                    cout << "El autor es: " << endl;
+                    cin >> arregloLibros[i].autor;
+                    cout << "ISBN: " << endl;
+                    cin >> arregloLibros[i].ISBN;
+                    cout << "El anio de publicacion es: " << endl;
+                    cin >> arregloLibros[i].anio;
+                    cout << endl;
+                }
+            }
+
+            break;
+        case 4: // Salida
+
+            cout << "Bye :) " << endl;
+            system("pause");
+            break;
+
+        default:
+            cout << "La opcion no es valida.... " << endl;
+            system("pause");
+            break;
+        }
+    }
+}
+
