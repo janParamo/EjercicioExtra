@@ -74,14 +74,10 @@ int registroLibro()
 
             for (int i = 0; i < indice; i++)
             {
-                cout << "El titulo del libro es: " << endl;
-                cin >> arregloLibros[i].titulo;
-                cout << "El autor es: " << endl;
-                cin >> arregloLibros[i].autor;
-                cout << "ISBN: " << endl;
-                cin >> arregloLibros[i].ISBN;
-                cout << "El anio de publicacion es: " << endl;
-                cin >> arregloLibros[i].anio;
+                cout << "El titulo del libro es: " << arregloLibros[i].titulo << endl;
+                cout << "El autor es: " << arregloLibros[i].autor << endl;
+                cout << "ISBN: " << arregloLibros[i].ISBN << endl;
+                cout << "El anio de publicacion es: " << arregloLibros[i].anio << endl;
                 cout << endl;
             }
 
@@ -92,14 +88,10 @@ int registroLibro()
             {
                 if (arregloLibros[i].anio > 2019)
                 {
-                    cout << "El titulo del libro es: " << endl;
-                    cin >> arregloLibros[i].titulo;
-                    cout << "El autor es: " << endl;
-                    cin >> arregloLibros[i].autor;
-                    cout << "ISBN: " << endl;
-                    cin >> arregloLibros[i].ISBN;
-                    cout << "El anio de publicacion es: " << endl;
-                    cin >> arregloLibros[i].anio;
+                    cout << "El titulo del libro es: " << arregloLibros[i].titulo << endl;
+                    cout << "El autor es: " << arregloLibros[i].autor << endl;
+                    cout << "ISBN: " << arregloLibros[i].ISBN << endl;
+                    cout << "El anio de publicacion es: " << arregloLibros[i].anio << endl;
                     cout << endl;
                 }
             }
@@ -118,4 +110,3 @@ int registroLibro()
         }
     }
 }
-
