@@ -80,7 +80,7 @@ int registroLibro()
                 cout << "El anio de publicacion es: " << arregloLibros[i].anio << endl;
                 cout << endl;
             }
-
+            system ("pause");
             break;
         case 3: // Mostrar los libros recientes(Menos de 5 anios)
 
@@ -95,7 +95,7 @@ int registroLibro()
                     cout << endl;
                 }
             }
-
+            system("pause");
             break;
         case 4: // Salida
 
@@ -109,4 +109,5 @@ int registroLibro()
             break;
         }
     }
+    return 0;
 }
