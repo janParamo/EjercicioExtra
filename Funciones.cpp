@@ -27,12 +27,14 @@ void libroMayoroMenor(); // Esta funcion se encarga de verificar que el anio del
 int menu()
 {
     system("cls || clear");
-    cout << "Menu de opciones: " << endl;
-    cout << "1. Agregar un nuevo libro al catalogo. " << endl;
-    cout << "2. Mostrar todos los libros en el catalogo. " << endl;
-    cout << "3. Mostrar los libros publicados en los ultimos 5 anios. " << endl;
-    cout << "4. Salir " << endl;
-    cout << "Seleccione una opcion: " << endl;
+    cout << "----------------------------------------------------------- " << endl;
+    cout << "|Menu de opciones:                                        |" << endl;
+    cout << "|1. Agregar un nuevo libro al catalogo.                   |" << endl;
+    cout << "|2. Mostrar todos los libros en el catalogo.              |" << endl;
+    cout << "|3. Mostrar los libros publicados en los ultimos 5 anios. |" << endl;
+    cout << "|4. Salir                                                 |" << endl;
+    cout << "|Seleccione una opcion:                                   |" << endl;
+    cout << "----------------------------------------------------------- " << endl;
     cin >> opcion;
     return opcion;
 }
@@ -66,7 +68,7 @@ int registroLibro()
             cout << "Ingrese el ISBN del libro: " << endl;
             cin >> nuevoLibro.ISBN;
             libroMayoroMenor();
-            arregloLibros[indice] = nuevoLibro;
+            arregloLibros[indice] = nuevoLibro; 
             indice++;
             system("pause");
             break;
