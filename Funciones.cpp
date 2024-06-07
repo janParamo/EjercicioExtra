@@ -22,6 +22,7 @@ using namespace std;
 int menu();              // Funcion que muestra el menu
 int registroLibro();     // Funcion principal
 void libroMayoroMenor(); // Esta funcion se encarga de verificar que el anio del libro sea mayor que 1900 y menor que 2025
+void ISBN();             // Esta funcion se encarga de verificar que el ISBN tenga una longitud de 13 DIGITOS
 
 // Funcion para mostrar el menu
 int menu()
@@ -51,6 +52,19 @@ void libroMayoroMenor()
     system("pause");
 }
 
+// Funcion para verificar que el ISBN tenga una longitud de 13 caracteres
+void ISBN()
+{
+    cout << "Ingrese el ISBN del libro:" << endl;
+    cin >> nuevoLibro.ISBN;
+    while (nuevoLibro.ISBN < 1000000000000 || nuevoLibro.ISBN > 9999999999999) // Se verifica que el ISBN tenga una longitud de 13 digitos
+    {
+        cout << "El ISBN tiene que tener una longitud de 13 digitos, sin caracteres, porfavor volver a ingresar el ISBN: " << endl;
+        cin >> nuevoLibro.ISBN;
+    }
+    
+}
+
 // La funcion principal en la que giran en torno las demas funciones
 int registroLibro()
 {
@@ -65,8 +79,7 @@ int registroLibro()
             cin >> nuevoLibro.titulo;
             cout << "Ingrese el autor del libro: " << endl;
             cin >> nuevoLibro.autor;
-            cout << "Ingrese el ISBN del libro: " << endl;
-            cin >> nuevoLibro.ISBN;
+            ISBN();
             libroMayoroMenor();
             arregloLibros[indice] = nuevoLibro; 
             indice++;
@@ -76,10 +89,13 @@ int registroLibro()
 
             for (int i = 0; i < indice; i++)
             {
+                cout << "-------------------------------------" << endl;
+                cout << "Numero de libro: " << i + 1 << endl;
                 cout << "El titulo del libro es: " << arregloLibros[i].titulo << endl;
                 cout << "El autor es: " << arregloLibros[i].autor << endl;
                 cout << "ISBN: " << arregloLibros[i].ISBN << endl;
                 cout << "El anio de publicacion es: " << arregloLibros[i].anio << endl;
+                cout << "-------------------------------------" << endl;
                 cout << endl;
             }
             system ("pause");
@@ -90,10 +106,13 @@ int registroLibro()
             {
                 if (arregloLibros[i].anio > 2019)
                 {
+                    cout << "--------------------------------------" << endl;
+                    cout << "Numero de libro: " << i + 1 << endl;
                     cout << "El titulo del libro es: " << arregloLibros[i].titulo << endl;
                     cout << "El autor es: " << arregloLibros[i].autor << endl;
                     cout << "ISBN: " << arregloLibros[i].ISBN << endl;
                     cout << "El anio de publicacion es: " << arregloLibros[i].anio << endl;
+                    cout << "--------------------------------------" << endl;
                     cout << endl;
                 }
             }

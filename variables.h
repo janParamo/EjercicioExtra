@@ -8,11 +8,11 @@
 #define MAX_STR 40 // Long de las cadenas texto
 #define MAX_REG 100 // Cantidad maxima de registro de libros en este caso permite un maximo de 100 libros
 
-struct LIBROS // Estructura de los libros 
+typedef struct LIBROS // Estructura de los libros 
 {
     char titulo[MAX_STR]; 
     char autor[MAX_STR];
-    char ISBN[13];
+    int ISBN;
     int anio;
 };
 
